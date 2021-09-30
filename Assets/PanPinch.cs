@@ -10,10 +10,6 @@ namespace CameraActions
     {
         #region "Input data"
         [SerializeField]
-        [Header("Camera that is child of the main camera")]
-        private GameObject _camera;
-
-        [SerializeField]
         [Header("X Inferior limit")]
         private float _limitXMin;
 
@@ -65,14 +61,12 @@ namespace CameraActions
         /// </summary>
         private void Panning()
         {            
+            if (Input.touchCount > 0 && Input.touchCount < 2 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                if (Input.touchCount > 0 && Input.touchCount < 2 && Input.GetTouch(0).phase == TouchPhase.Moved)
-                {
                     
-                    Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;                  
-                    PanningFunction(touchDeltaPosition);
-                }
-            }
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;                  
+                PanningFunction(touchDeltaPosition);
+            }           
         }
 
 
@@ -106,7 +100,7 @@ namespace CameraActions
                         _zoomTarget = Camera.main.ScreenToWorldPoint((touchZero.position + touchOne.position)/2);
                     }
 
-                    if(dist / prevDist > 1f)
+                    if((dist / prevDist) > 1f)
                     {
 
                         PanningFunction(-(((Vector2)Camera.main.WorldToScreenPoint(_zoomTarget))-screenCenter) * Time.deltaTime);
