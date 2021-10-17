@@ -1,34 +1,45 @@
 # Camera-Movement-By-Touch
 
-### PanPinchCameraMovement.cs 
+## Table of contents
+* Description
+* Parameters
+* Features
 
-    Script used for the camera movement in 2D space
-    Atach it to any gameobject
+## Description
+Script: PanPinchCameraMovement.cs 
 
-    Parameters
+Used for the camera movement in 2D space that is attached to any gameObject
 
-    1.Camera To Move --> Camera component of the object that you want to move 
+## Parameters
 
-    2.X inferior limit --> the minim x value for the camera position [camera position is the center of the view]
+* Camera To Move --> Camera component of the object that you want to move 
 
-    3.X superior limit --> the maximum x value for the camera position
+* X inferior limit --> the minim x value for the camera position [camera position is the center of the view]
 
-    4.Y inferior limit 
+* X superior limit --> the maximum x value for the camera position
 
-    5.Y superior limit
+* Y inferior limit 
 
-    6.Minimum ortho size --> the minim ortho size of the camera that has the "Projection" in Orthographic mode
+* Y superior limit
 
-    7.Maximum ortho size --> the maximum ortho size
+* Minimum ortho size --> the minim ortho size of the camera that has the "Projection" in Orthographic mode
 
-### Features of the module
+* Maximum ortho size --> the maximum ortho size
 
-    1. Panning with one finger in any direction with finger remaining always under the touched object [also know as pixel perfect panning]
+
+
+## Features
+
+* Panning with one finger in any direction with finger remaining always under the touched object [also know as pixel perfect panning]
     
-    2. Pinching with two or more fingers with zooming target in the middle point of the two fingers
+* Pinching with two or more fingers with zooming target in the middle point of the two fingers
 
-    3. Supports panning during the pinching operation
+* Supports panning during the pinching operation
 
-    4. WorldSpace limits and orthographic limits
+* WorldSpace limits and orthographic limits
 
-    5. Ignores any UI elements during touch operation
+* Ignores any UI elements during touch operation
+    
+* Static bool MovingCamera with tolerance to know when camera is moving by touch
+
+* Gizmo drawing in UNITY EDITOR to know the limits of the camera 
