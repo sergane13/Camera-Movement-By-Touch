@@ -25,11 +25,11 @@ namespace CameraActions
 
         [SerializeField]
         [Header("Y Inferior limit")]
-        private float limitYMin;
+        private float _limitYMin;
 
         [SerializeField]
         [Header("Y Superior limit")]
-        private float limitYMax;
+        private float _limitYMax;
 
         [SerializeField]
         [Header("Minimum orthographic size")]
@@ -56,11 +56,21 @@ namespace CameraActions
 
         #endregion
 
-        private void Awake()
-        {
-            resolutionRatio = Screen.width / Screen.height;
-        }
+        public static bool MovingCamera = false;
 
+        private void Awake()
+        {}
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(new Vector3(_limitXMin, _limitYMin), new Vector3(_limitXMin, _limitYMax));
+            Gizmos.DrawLine(new Vector3(_limitXMin, _limitYMax), new Vector3(_limitXMax, _limitYMax));
+            Gizmos.DrawLine(new Vector3(_limitXMax, _limitYMax), new Vector3(_limitXMax, _limitYMin));
+            Gizmos.DrawLine(new Vector3(_limitXMax, _limitYMin), new Vector3(_limitXMin, _limitYMin));
+        }
+#endif
 
         private void Update()
         {
@@ -78,6 +88,7 @@ namespace CameraActions
             if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 bool check = false;
+                MovingCamera = false;
 
                 for (int i = 0; i < Input.touchCount; i++)
                 {
@@ -105,6 +116,11 @@ namespace CameraActions
             {                   
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;                    
                 PanningFunction(touchDeltaPosition);
+
+                if (Input.GetTouch(0).deltaPosition.x > 1.6f || Input.GetTouch(0).deltaPosition.y > 1.6f)
+                {
+                    MovingCamera = true;
+                }
             }          
         }
 
@@ -148,6 +164,7 @@ namespace CameraActions
                         t = Mathf.Clamp(a * x + b, 0f, 1f);
                         
                         _cameraToMove.transform.position = Vector3.Lerp(initPos, new Vector3(zoomTarget.x, zoomTarget.y, _cameraToMove.transform.position.z), t);
+                        LimitCameraMovement();
                     }
                 }
                     
@@ -178,10 +195,19 @@ namespace CameraActions
           
             transform.Translate(-worldDeltaPosition);
 
-            float x = Mathf.Clamp(transform.position.x, _limitXMin + _cameraToMove.orthographicSize * resolutionRatio, _limitXMax - _cameraToMove.orthographicSize * resolutionRatio);
-            float y = Mathf.Clamp(transform.position.y, limitYMin + _cameraToMove.orthographicSize, limitYMax - _cameraToMove.orthographicSize);
+            LimitCameraMovement();
+        }
 
-            transform.position = new Vector3(x, y, -10f);
+
+        /// <summary>
+        /// Limits Camera Movement
+        /// </summary>
+        private void LimitCameraMovement()
+        {
+            float xCord = Mathf.Clamp(_cameraToMove.transform.position.x, _limitXMin + (_cameraToMove.orthographicSize * _cameraToMove.aspect), _limitXMax - (_cameraToMove.orthographicSize * _cameraToMove.aspect));
+            float yCord = Mathf.Clamp(_cameraToMove.transform.position.y, _limitYMin + _cameraToMove.orthographicSize, _limitYMax - _cameraToMove.orthographicSize);
+
+            transform.position = new Vector3(xCord, yCord, -10f);
         }
     }
 }
