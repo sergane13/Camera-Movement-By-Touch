@@ -6,9 +6,12 @@
 * Features
 
 ## Description
-Script: PanPinchCameraMovement.cs 
+Scripts: 
+* PanPinchCameraMovement.cs  
+* TapOnGameObject.cs
 
-Used for the camera movement in 2D space that is attached to any gameObject
+#### Used for the camera movement in 2D space that is attached to any gameObject.
+#### Used for detecting tap on gameObjects with a Collider attached. [COLLIDER MUST BE ATTACHED TO GAMEOBJECT]
 
 ## Parameters
 
@@ -26,6 +29,7 @@ Used for the camera movement in 2D space that is attached to any gameObject
 
 * Maximum ortho size --> the maximum ortho size
 
+* Sensitivity --> the sensitivity of Touch.deltaPosition to consider it in the Moved phase
 
 
 ## Features
@@ -43,3 +47,5 @@ Used for the camera movement in 2D space that is attached to any gameObject
 * Static bool MovingCamera with tolerance to know when camera is moving by touch
 
 * Gizmo drawing in UNITY EDITOR to know the limits of the camera 
+
+* Detects tap on GameObjects for opening screens or panels [UI canvas]
