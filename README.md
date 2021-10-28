@@ -14,7 +14,8 @@ Scripts:
 #### Used for detecting tap on gameObjects with a Collider attached. [COLLIDER MUST BE ATTACHED TO GAMEOBJECT]
 
 ## Parameters
-
+---
+PanPinchCameraMovement.cs 
 * Camera To Move --> Camera component of the object that you want to move 
 
 * X inferior limit --> the minim x value for the camera position [camera position is the center of the view]
@@ -29,14 +30,22 @@ Scripts:
 
 * Maximum ortho size --> the maximum ortho size
 
+* Interpolation step for inertia [0.2 recommended]
+
+---
+TapOnGameObject.cs
 * Sensitivity --> the sensitivity of Touch.deltaPosition to consider it in the Moved phase
 
 
 ## Features
 
 * Panning with one finger in any direction with finger remaining always under the touched object [also know as pixel perfect panning]
+
+* Panning has inertia
     
 * Pinching with two or more fingers with zooming target in the middle point of the two fingers
+
+* Visual feedback for achieving minimum ortho 
 
 * Supports panning during the pinching operation
 
