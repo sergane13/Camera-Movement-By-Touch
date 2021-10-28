@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
@@ -39,6 +35,10 @@ namespace CameraActions
         [Header("Maximum orthographic size")]
         private float _orthoMax = 12f;
 
+           
+        [Header("Interpolation step for camera drag")]
+        [Space(40f)]
+        [SerializeField]  private float _interpolationStep;
         #endregion
 
         #region "Private members"
@@ -48,14 +48,18 @@ namespace CameraActions
 
         private bool _lastFramePinch = false;
 
-        private float initDist = 42f;
-        private float initOrtho = 6;
+        private float initDist = 42f; // var for calculation [used in Pinching()]
+        private float initOrtho = 6;  // var for calculation [used in Pinching()]
 
-        private bool _initTouch = false;
+        private bool _initTouch = false; // if init touch is on UI element
 
+        private Vector2 _panVelocity;  //delta position of the touch [camera position derivative]
         #endregion
 
 
+        /// <summary> 
+        /// Draw camera boundaries on editor
+        /// </summary>
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
@@ -69,10 +73,36 @@ namespace CameraActions
 
 
         private void Awake()
-        { }
+        {}
 
 
         private void Update()
+        {
+            CheckIfUiHasBeenTouched();
+
+            // If there are no touches 
+            if (Input.touchCount < 1)
+            {
+                _initTouch = true;
+            }
+
+            if (_initTouch == false)
+            {
+                Panning();
+                Pinching();
+            }
+            else
+            {
+                PanningInertia();
+                MinOrthoAchievedAnimation();
+            }
+        }
+
+
+        /// <summary>
+        /// Checks if one of the touches have started on a UI element
+        /// </summary>
+        private void CheckIfUiHasBeenTouched()
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
@@ -92,17 +122,6 @@ namespace CameraActions
                     _initTouch = false;
                 }
             }
-
-            if (Input.touchCount > 0 && Input.touchCount < 2 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                _initTouch = true;
-            }
-
-            if (_initTouch == false)
-            {
-                Panning();
-                Pinching();
-            }
         }
 
 
@@ -114,7 +133,14 @@ namespace CameraActions
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+
+                _panVelocity = touchDeltaPosition;
+               
                 PanningFunction(touchDeltaPosition);
+            }
+            else if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
+            {
+                _panVelocity = Vector2.zero;
             }
         }
 
@@ -126,6 +152,8 @@ namespace CameraActions
         {
             if (Input.touchCount > 1)
             {
+                _panVelocity = Vector2.zero;
+
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
 
@@ -175,8 +203,13 @@ namespace CameraActions
         }
 
 
+        /// <summary>
+        ///  The method for panning the camera with one input deltaPosition
+        ///  Has a little bit of lag
+        /// </summary>
+        /// <param name="touchDeltaPosition"> the delta position for movement </param>
         private void PanningFunction(Vector2 touchDeltaPosition)
-        {
+        {          
             Vector3 screenCenter = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 1f);
             Vector3 screenTouch = screenCenter + new Vector3(touchDeltaPosition.x, touchDeltaPosition.y, 0f);
 
@@ -192,7 +225,40 @@ namespace CameraActions
 
 
         /// <summary>
-        /// Limits Camera Movement
+        /// Inertia when panning finishes 
+        /// </summary>
+        private void PanningInertia()
+        {
+            if (_panVelocity.magnitude < 0.02f)
+            {
+                _panVelocity = Vector2.zero;
+            }
+
+            if (_panVelocity != Vector2.zero)
+            {             
+                _panVelocity = Vector2.Lerp(_panVelocity, Vector2.zero, _interpolationStep);
+                _cameraToMove.transform.localPosition += new Vector3(-_panVelocity.x / (500 * (1 / _cameraToMove.orthographicSize)), -_panVelocity.y / (500 * (1 / _cameraToMove.orthographicSize)), 0);
+                LimitCameraMovement();
+            }
+        }
+
+
+        /// <summary>
+        /// Camera feedback when achieving minimum ortho
+        /// </summary>
+        private void MinOrthoAchievedAnimation()
+        {           
+            if (_cameraToMove.orthographicSize < _orthoMin + 0.6f)
+            {
+                _cameraToMove.orthographicSize = Mathf.Lerp(_cameraToMove.orthographicSize, _orthoMin + 0.6f, 0.06f);
+                _cameraToMove.orthographicSize = Mathf.Round(_cameraToMove.orthographicSize * 1000.0f) * 0.001f;
+                LimitCameraMovement();
+            }
+        }
+
+
+        /// <summary>
+        /// Limits Camera Movement into boundaries
         /// </summary>
         private void LimitCameraMovement()
         {
