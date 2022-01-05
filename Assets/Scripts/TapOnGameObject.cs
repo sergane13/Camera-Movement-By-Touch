@@ -9,6 +9,7 @@ namespace CameraActions
     public class TapOnGameObject : MonoBehaviour
     {
         #region "Input data"
+        [Header("The sensitivity for counting a touch on the screen as a 'TOUCH'")]
         [SerializeField] private float _sensitivity;
         #endregion
 
@@ -23,13 +24,14 @@ namespace CameraActions
 
         void Update()
         {
-            if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(0))
+            if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(0)) // using the old input system
             {
                 Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 
                 if (hit.collider != null)
                 {
+                    // Save the collider at the start of the touch
                     if (Input.GetTouch(0).phase == TouchPhase.Began)
                     {
                         s_firstColliderTouched = hit.collider;
@@ -37,7 +39,7 @@ namespace CameraActions
                         s_second = false;
                     }
 
-
+                    // Check if the minimum touch deltaposition is more than _sensitivity to count the touch as MOVED
                     if (Input.GetTouch(0).phase == TouchPhase.Moved)
                     {
                         if (Mathf.Abs(Input.GetTouch(0).deltaPosition.x) > _sensitivity || Mathf.Abs(Input.GetTouch(0).deltaPosition.y) > _sensitivity)
@@ -46,7 +48,7 @@ namespace CameraActions
                         }
                     }
 
-
+                    // Check if the end of touch is on the same collider 
                     if (Input.GetTouch(0).phase == TouchPhase.Ended)
                     {
                         if (s_firstColliderTouched == hit.collider && s_hasMoved == false)
@@ -62,13 +64,16 @@ namespace CameraActions
                     }
 
 
+                    // if continions are true, the tap has begun on a colider, not moved withim the limits and the touch ended on the same collider
                     if (s_first && s_second)
                     {
                         //##################################################################################
-                        //if (Your stuff != null)
-                        //{
-                        //    Execute what you want here. Here is the confirmation for the tap
-                        //}
+                        //
+                        //  if (Your stuff != null)
+                        //  {
+                        //      Execute what you want here. Here is the confirmation for the tap. We suggest using an interface
+                        //  }
+                        //
                         //##################################################################################
 
                         s_first = false;

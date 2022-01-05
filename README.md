@@ -1,23 +1,17 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/target-software/Unlimited-Game-MiningGame">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center"> Camera Movement By Touch </h3>
 
   <p align="center">
-    README for the Unlimited game [Mining game]
+    README for Camera Movement
     <br />
-    <a href="https://github.com/target-software/Unlimited-Game-MiningGame"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/sergane13/Camera-Movement-By-Touch"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/target-software/Unlimited-Game-MiningGame">View Demo</a>
+    <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Report Bug</a>
     ·
-    <a href="https://github.com/target-software/Unlimited-Game-MiningGame/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/target-software/Unlimited-Game-MiningGame/issues">Request Feature</a>
+    <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Request Feature</a>
   </p>
 </p>
 
@@ -54,9 +48,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="images/1.png" alt="Logo" width="1400" height="600">
 
-Unlimited Game ... The next 2D social strategy game with an interconnected economy system that teach users basic finance and an entrepreneurial mindset.
+Out of the box sollution for managing movement of camera in your game. 
 
 ### Built With
 
@@ -68,7 +62,7 @@ Unlimited Game ... The next 2D social strategy game with an interconnected econo
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/sergane13/Camera-Movement-By-Touch
    ```
 2. Open project in Unity
 
@@ -93,32 +87,11 @@ See the [open issues](https://github.com/target-software/Unlimited-Game-MiningGa
 ```bash
 < PROJECT ROOT >
    |
-   |-- Animations                               
-   |-- Editor    
-   |-- GUI
-   |-- Materials
-      | -- Mine Blocks
-      | -- Robot asociated
-   |-- Meshes
-   |-- Prefabs
-      | -- Block
-      | -- Robot
-   |-- Resources
-      | -- Blocks
-      | -- Preview Line
-      | -- Robot Design
-      | -- Waypoints Robot
-   |-- Scenes
-   |-- Scriptable Objetcs
-      | -- Resources
-      | -- Robots
-   |-- Scripts
-      | -- Manager Scripts
-      | -- Mine Generation
-      | -- Robot Movement
-      | -- Scriptable Objetcts
-      | -- Touch
-   |-- Sounds
+   |--Editor
+   |--Resources
+   |--Scenes
+   |--Scripts     
+   |                          
   ************************************************************************
 ```
 

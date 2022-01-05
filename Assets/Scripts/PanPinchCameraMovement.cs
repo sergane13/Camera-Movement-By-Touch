@@ -7,37 +7,35 @@ namespace CameraActions
     public class PanPinchCameraMovement : MonoBehaviour
     {
         #region "Input data" 
-        [SerializeField]
+        
         [Header("Camera to move")]
-        private Camera _cameraToMove;
+        [SerializeField] private Camera _cameraToMove;
 
-        [SerializeField]
-        [Header("X Inferior limit")]
-        private float _limitXMin;
-
-        [SerializeField]
-        [Header("X Superior limit")]
-        private float _limitXMax;
-
-        [SerializeField]
-        [Header("Y Inferior limit")]
-        private float _limitYMin;
-
-        [SerializeField]
-        [Header("Y Superior limit")]
-        private float _limitYMax;
-
-        [SerializeField]
-        [Header("Minimum orthographic size")]
-        private float _orthoMin = 2f;
-
-        [SerializeField]
-        [Header("Maximum orthographic size")]
-        private float _orthoMax = 12f;
-
-           
-        [Header("Interpolation step for camera drag")]
         [Space(40f)]
+
+        [Header("X Inferior limit")]
+        [SerializeField] float _limitXMin;
+      
+        [Header("X Superior limit")]
+        [SerializeField] private float _limitXMax;
+       
+        [Header("Y Inferior limit")]
+        [SerializeField] private float _limitYMin;
+      
+        [Header("Y Superior limit")]
+        [SerializeField] private float _limitYMax;
+
+        [Space(40f)]
+
+        [Header("Minimum orthographic size")]
+        [SerializeField] private float _orthoMin = 2f;
+       
+        [Header("Maximum orthographic size")]
+        [SerializeField] private float _orthoMax = 12f;
+
+
+        [Space(40f)]
+        [Header("Interpolation step for camera drag")]     
         [SerializeField]  private float _interpolationStep;
         #endregion
 
@@ -100,7 +98,7 @@ namespace CameraActions
 
 
         /// <summary>
-        /// Checks if one of the touches have started on a UI element
+        /// Checks if one of the touches have started on a UI element 
         /// </summary>
         private void CheckIfUiHasBeenTouched()
         {
@@ -110,7 +108,7 @@ namespace CameraActions
 
                 for (int i = 0; i < Input.touchCount; i++)
                 {
-                    if (EventSystem.current.IsPointerOverGameObject(i))
+                    if (EventSystem.current.IsPointerOverGameObject(i)) // implementation for the old input system!!
                     {
                         check = true;
                         break;
@@ -205,7 +203,7 @@ namespace CameraActions
 
         /// <summary>
         ///  The method for panning the camera with one input deltaPosition
-        ///  Has a little bit of lag
+        ///  Has a little bit of lag from transform.Translate;
         /// </summary>
         /// <param name="touchDeltaPosition"> the delta position for movement </param>
         private void PanningFunction(Vector2 touchDeltaPosition)
@@ -225,7 +223,7 @@ namespace CameraActions
 
 
         /// <summary>
-        /// Inertia when panning finishes 
+        /// Inertia of the camera when panning finishes 
         /// </summary>
         private void PanningInertia()
         {
