@@ -5,7 +5,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">UNLIMITED </h3>
+  <h3 align="center"> Camera Movement By Touch </h3>
 
   <p align="center">
     README for the Unlimited game [Mining game]
