@@ -169,7 +169,7 @@
 # Project structure
 
 ```bash
-< PROJECT ROOT for Assets >
+< PROJECT ROOT >
    |
    |--Editor
    |--Resources
