@@ -1,5 +1,7 @@
 <!-- PROJECT LOGO -->
 
+<img src=https://img.shields.io/github/last-commit/sergane13/Camera-Movement-By-Touch/>
+
 <br />
 <p align="center">
   <h1 align="center">🎥 Camera Movement By Touch 👆</h1>
@@ -86,10 +88,11 @@
 
 ## Working with
 
-<img src="https://img.shields.io/badge/os-ios-lightgrey" height = 19px/>
-<img src="	https://img.shields.io/badge/os-android-brightgreen" height = 20px/>
+<p> 
+  <img src="https://img.shields.io/badge/os-ios-lightgrey" height = 19px/>
+  <img src="	https://img.shields.io/badge/os-android-brightgreen" height = 20px/>
+</p>
 
-<br>
 
 # Getting Started
 
@@ -142,7 +145,6 @@
   * Using the new input system will results in a lot of errors and incompatibilities, especialy with managing touch on UI elements
 
 <!-- USAGE EXAMPLES -->
-<br/>
 
 # Usage
 
@@ -151,7 +153,6 @@
 * You can test the usage of the scripts in our game [Khyron Realm](https://khyron-realm.com/)
 * You can also see the [Youtube](https://www.youtube.com/watch?v=uhusqjg41g8&t=78s&ab_channel=KhyronRealm) video
 
-<br/>
 
 <!-- CONTRIBUTING -->
 # Project structure
@@ -177,7 +178,6 @@
 * [Serban Chisca](https://github.com/sergane13)
 * [Codrin Burlacu](https://github.com/whatever-jpg)
 
-<br/>
 
 <!-- LICENSE -->
 # License
