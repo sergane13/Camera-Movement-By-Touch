@@ -1,5 +1,5 @@
 <!-- PROJECT LOGO -->
-[![HitCount](http://hits.dwyl.com/sergane1313/Camera-Movement-By-Touch.svg?style=flat-square)](http://hits.dwyl.com/sergane1313/Camera-Movement-By-Touch)
+[![HitCount](https://img.shields.io/github/stars/sergane13/Camera-Movement-By-Touch?style=social)
  
 <br />
 <p align="center">
