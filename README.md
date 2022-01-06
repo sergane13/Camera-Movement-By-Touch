@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <h1 align="center"> Camera Movement By Touch </h1>
+  <h1 align="center">🎥 Camera Movement By Touch 👆</h1>
 
   <p align="center">
     README for Camera Movement
@@ -46,8 +46,8 @@
 
 <br/>
 <br/>
-<br/>
-<br/>
+
+
 
 <!-- ABOUT THE PROJECT -->
 # 1. About The Project
@@ -63,6 +63,24 @@
   Out of the box sollution for managing movement of camera in your game and interaction with different gameObjects using the collider. 
 </p>
 
+### Features
+ *  Panning with one finger in any direction with the finger remaining always under the touched object [also know as pixel perfect panning]
+
+ * Panning has inertia
+
+ * WorldSpace limits and orthographic limits
+
+ * Gizmo drawing in UNITY EDITOR to know the limits of the camera
+
+ * Visual feedback for achieving minimum ortho
+    
+ * Pinching with two or more fingers with zooming target in the middle point of the two fingers
+
+ * Supports panning during the pinching operation
+
+ * Ignores any UI elements during touch operation
+
+ * Detects tap on GameObjects for opening screens or panels [UI canvas]
 <br>
 
 ## Built With
@@ -78,7 +96,6 @@
 <img src="	https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" height = 20px/>
 
 <br>
-<br/>
 
 # Getting Started
 
@@ -118,11 +135,12 @@
     * `orthoMax`
         * The maximum orhographic size of the camera
     * `interpolationStep` 
-        * Sensitivity value for calculating the camera drag after release of the finger.
+        * Sensitivity value for calculating the camera drag (inertia) after release of the finger.
         Reccomended value: 0.2
   * The second script is `TapOnGameObject.cs` that is responsible vor validating the "tap" on a gameobject veryfiyng that the finger has not left the initial touch position, taking in consideration a small sensitivity to get rid of false positives.
     * `sensitivity`
         * value for filtering touch.deltaposition to consider the touch as MOVING
+        * Reccomended value: 0.2
 
 ### Disclaimer ⚠️
 
@@ -134,6 +152,8 @@
 <br/>
 
 # Usage
+
+### After reasearching for quite a while, we could not find a good and sustainable sollution for camera movement for mobile aplications. In our case it was needed to build a 2d city builder game where user has to interact with the environment. It can be easily used in any 2d isometric games similar with `HayDay` or `Clash of Clans`. We tried to mimic the bahaviour that it is found in supercell games for camera movement, but adaptated for our usage.
 
 * You can test the usage of the scripts in our game [Khyron Realm](https://khyron-realm.com/)
 * You can also see the [Youtube](https://www.youtube.com/watch?v=uhusqjg41g8&t=78s&ab_channel=KhyronRealm) video
