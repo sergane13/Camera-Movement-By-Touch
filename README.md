@@ -86,9 +86,11 @@
 
 ## Working with
 
-
+<p> 
+  <img src="https://img.shields.io/badge/os-ios-lightgrey" height = 19px/>
+</p>
 <p>
-  <img src="	https://img.shields.io/badge/os-and-brightgreen" height = 20px/>
+  <img src="https://img.shields.io/badge/os-ios-lightgrey" height = 20px/>
 </p>
 
 
