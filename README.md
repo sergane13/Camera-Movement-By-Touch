@@ -1,7 +1,5 @@
 <!-- PROJECT LOGO -->
 
-<img src=https://img.shields.io/github/last-commit/sergane13/Camera-Movement-By-Touch/>
-
 <br />
 <p align="center">
   <h1 align="center">🎥 Camera Movement By Touch 👆</h1>
@@ -83,13 +81,15 @@
 
 ## Built With
 
-* [Unity](https://unity.com/) in <img src=https://img.shields.io/badge/language-C%23-blue height = 12px/>
+* [Unity](https://unity.com/) in <img src=https://img.shields.io/badge/language-C%23-blue height = 14px/>
 <!-- GETTING STARTED -->
 
 ## Working with
 
 <p> 
   <img src="https://img.shields.io/badge/os-ios-lightgrey" height = 19px/>
+</p>
+<p>
   <img src="	https://img.shields.io/badge/os-android-brightgreen" height = 20px/>
 </p>
 
@@ -148,7 +148,7 @@
 
 # Usage
 
-### After reasearching for quite a while, we could not find a good and sustainable sollution for camera movement for mobile aplications. In our case it was needed to build a 2d city builder game where user has to interact with the environment. It can be easily used in any 2d isometric games similar with `HayDay` or `Clash of Clans`. We tried to mimic the bahaviour that it is found in supercell games for camera movement, but adaptated for our usage.
+#### After reasearching for quite a while, we could not find a good and sustainable sollution for camera movement for mobile aplications. In our case it was needed to build a 2d city builder game where user has to interact with the environment. It can be easily used in any 2d isometric games similar with `HayDay` or `Clash of Clans`. We tried to mimic the bahaviour that it is found in supercell games for camera movement, but adaptated for our usage.
 
 * You can test the usage of the scripts in our game [Khyron Realm](https://khyron-realm.com/)
 * You can also see the [Youtube](https://www.youtube.com/watch?v=uhusqjg41g8&t=78s&ab_channel=KhyronRealm) video
