@@ -1,15 +1,8 @@
 <!-- PROJECT LOGO -->
 
-<img src="	https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
-<img src="	https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" />
-<img src="	https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
-
-
-
-
 <br />
 <p align="center">
-  <h3 align="center"> Camera Movement By Touch </h3>
+  <h1 align="center"> Camera Movement By Touch </h1>
 
   <p align="center">
     README for Camera Movement
@@ -20,11 +13,11 @@
     <img src="	https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
     <img src="	https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" />
     </p>
-    <br />
-    <br />
-    <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Request Feature</a>
+    <p align="center"> 
+      <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Report Bug</a>
+      ·
+      <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Request Feature</a>
+    </p>   
   </p>
 </p>
 
@@ -51,23 +44,43 @@
   </ol>
 </details>
 
-
+<br/>
+<br/>
+<br/>
+<br/>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# 1. About The Project
+<br/>
 
-<img src="images/1.png" alt="Logo" width="1400" height="600">
+<img src="images/1.png" alt="Logo" width="1400">
 
+<br>
+<br>
+
+## Description
 <p>
-  Out of the box sollution for managing movement of camera in your game. 
+  Out of the box sollution for managing movement of camera in your game and interaction with different gameObjects using the collider. 
 </p>
 
+<br>
 
-### Built With
+## Built With
 
-* [Unity](https://unity.com/)
+* [Unity](https://unity.com/) in <img src="	https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" height = 12px/>
 <!-- GETTING STARTED -->
-## Getting Started
+
+<br>
+
+## Working with
+
+<img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" height = 19px/>
+<img src="	https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" height = 20px/>
+
+<br>
+<br/>
+
+# Getting Started
 
 ### Installation
 
@@ -75,46 +88,64 @@
    ```sh
    git clone https://github.com/sergane13/Camera-Movement-By-Touch
    ```
+   
 2. Open project in Unity
+    ```sh
+    Tested Unity version: 2021.2.0f1
+    ```
 
-3. Add scripts to any gameObject you want and assign the main camera
+3. Add scripts to any gameObject you want and assign the main camera to it
     <p>
-      <img src="images/2.png" alt="Logo" width="700" height="800">
+      <img src="images/2.png" alt="Logo" width="700">
     </p>
  
 
 ### How to use it
 
-```bash
-  PanPinchCameraMovement.cs
-  
-    @param
-      cameraToMove
-      limitXmin
-      limitXmax
-      limitYmin
-      limitYmax
-      orthoMin
-      orthoMax
-      interpolationStep
+  * The first script is `PanPinchCameracMovement.cs` that is used for managing the inputs from the user [touch inputs].
+    * `cameraToMove`
+        * The camera component that will be manipulated by the user
+    * `limitXmin`
+        * The minimum position of the camera field of view on X axis
+    * `limitXmax`
+        * The maximum position of the camera field of view on X axis 
+    * `limitYmin`
+        * The minimum position of the camera field of view on Y axis
+    * `limitYmax`
+        * The maximum position of the camera field of view on Y axis
+    * `orthoMin`
+        * The minum orhographic size of the camera
+    * `orthoMax`
+        * The maximum orhographic size of the camera
+    * `interpolationStep` 
+        * Sensitivity value for calculating the camera drag after release of the finger.
+        Reccomended value: 0.2
+  * The second script is `TapOnGameObject.cs` that is responsible vor validating the "tap" on a gameobject veryfiyng that the finger has not left the initial touch position, taking in consideration a small sensitivity to get rid of false positives.
+    * `sensitivity`
+        * value for filtering touch.deltaposition to consider the touch as MOVING
 
-  TapOnGameObject.cs
+### Disclaimer ⚠️
 
-    @param
-      sensitivity
-```
+  * Both scripts are using the **old input system**  
+  * Using the new input system will results in a lot of errors and incompatibilities, especialy with managing touch on UI elements
+
 <!-- USAGE EXAMPLES -->
-## Usage
+<br/>
+<br/>
+
+# Usage
 
 * You can test the usage of the scripts in our game [Khyron Realm](https://khyron-realm.com/)
 * You can also see the [Youtube](https://www.youtube.com/watch?v=uhusqjg41g8&t=78s&ab_channel=KhyronRealm) video
 
+<br/>
+<br/>
 
 <!-- CONTRIBUTING -->
-## Project structure
+# Project structure
 
 ```bash
-< PROJECT ROOT >
+< PROJECT ROOT for Assets >
    |
    |--Editor
    |--Resources
@@ -129,10 +160,11 @@
   ************************************************************************
 ```
 
-
+<br/>
+<br/>
 
 <!-- LICENSE -->
-## License
+# License
 
 Project Template adapted from [Othneil Drew](https://github.com/othneildrew) / [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
 
