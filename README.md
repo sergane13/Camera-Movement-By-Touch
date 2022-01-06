@@ -187,7 +187,7 @@
 # Colaborators
 
 * [Serban Chisca](https://github.com/sergane13)
-* [Codrin Burlacu](https://github.com/whatever-jpg)
+* [whatever-jpg](https://github.com/whatever-jpg)
 
 
 <!-- LICENSE -->
