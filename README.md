@@ -1,5 +1,6 @@
 <!-- PROJECT LOGO -->
 ![HitCount](https://img.shields.io/github/stars/sergane13/Camera-Movement-By-Touch?style=social)
+![Watchers](https://img.shields.io/github/watchers/sergane13/Camera-Movement-By-Touch?style=social)
  
 <br />
 <p align="center">
