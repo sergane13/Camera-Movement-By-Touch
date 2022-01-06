@@ -29,25 +29,38 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#description">Description</a></li>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#working-with">Working with</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#How-to-use-it">How to use it</a></li>
+        <li><a href="#how-to-use-it">How to use it</a></li>
+        <li><a href="#disclaimer">Disclaimer</a>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+    </li>
+    <li>
+      <a href="#project-structure">Project structure</a>
+    </li>
+    <li>
+      <a href="#colaborators">Colaborators</a>
+    </li>
+    <li>
+      <a href="#license">License</a>
+    </li>
   </ol>
 </details>
 
 <br/>
 
 <!-- ABOUT THE PROJECT -->
-# 1. About The Project
+# About The Project
 <br/>
 
 <img src="images/1.png" alt="Logo" width="1400">
@@ -137,9 +150,9 @@
         * value for filtering touch.deltaposition to consider the touch as MOVING
         * Reccomended value: 0.2
 
-### Disclaimer ⚠️
+### Disclaimer 
 
-  * Both scripts are using the **old input system**  
+  * Both scripts are using the **old input system** ⚠️  
   * Using the new input system will results in a lot of errors and incompatibilities, especialy with managing touch on UI elements
 
 <!-- USAGE EXAMPLES -->
@@ -180,16 +193,16 @@
 <!-- LICENSE -->
 # License
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
-[![CC BY 4.0][cc-by-image]][cc-by]
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 
 
