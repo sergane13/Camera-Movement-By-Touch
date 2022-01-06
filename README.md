@@ -88,7 +88,7 @@
 
 
 <p>
-  <img src="	https://img.shields.io/badge/os-android-brightgreen" height = 20px/>
+  <img src="	https://img.shields.io/badge/os-and-brightgreen" height = 20px/>
 </p>
 
 
