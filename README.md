@@ -10,8 +10,8 @@
     <a href="https://github.com/sergane13/Camera-Movement-By-Touch"><strong>Explore the docs »</strong></a>
     <p align="center">
     <img src="https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=flat&logo=unity)](https://unity3d.com)"/>
-    <img src="	https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-    <img src="	https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" />
+    <img src="https://img.shields.io/badge/Maintained%3F-yes-green" />
+    <img src="https://img.shields.io/badge/Ask%20me%20-anything-orange" />
     </p>
     <p align="center"> 
       <a href="https://github.com/sergane13/Camera-Movement-By-Touch/issues">Report Bug</a>
@@ -45,9 +45,6 @@
 </details>
 
 <br/>
-<br/>
-
-
 
 <!-- ABOUT THE PROJECT -->
 # 1. About The Project
@@ -55,7 +52,6 @@
 
 <img src="images/1.png" alt="Logo" width="1400">
 
-<br>
 <br>
 
 ## Description
@@ -85,15 +81,13 @@
 
 ## Built With
 
-* [Unity](https://unity.com/) in <img src="	https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" height = 12px/>
+* [Unity](https://unity.com/) in <img src=https://img.shields.io/badge/language-C%23-blue height = 12px/>
 <!-- GETTING STARTED -->
-
-<br>
 
 ## Working with
 
-<img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" height = 19px/>
-<img src="	https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" height = 20px/>
+<img src="https://img.shields.io/badge/os-ios-lightgrey" height = 19px/>
+<img src="	https://img.shields.io/badge/os-android-brightgreen" height = 20px/>
 
 <br>
 
@@ -149,7 +143,6 @@
 
 <!-- USAGE EXAMPLES -->
 <br/>
-<br/>
 
 # Usage
 
@@ -158,7 +151,6 @@
 * You can test the usage of the scripts in our game [Khyron Realm](https://khyron-realm.com/)
 * You can also see the [Youtube](https://www.youtube.com/watch?v=uhusqjg41g8&t=78s&ab_channel=KhyronRealm) video
 
-<br/>
 <br/>
 
 <!-- CONTRIBUTING -->
@@ -180,11 +172,28 @@
   ************************************************************************
 ```
 
-<br/>
+# Colaborators
+
+* [Serban Chisca](https://github.com/sergane13)
+* [Codrin Burlacu](https://github.com/whatever-jpg)
+
 <br/>
 
 <!-- LICENSE -->
 # License
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
+
 
 Project Template adapted from [Othneil Drew](https://github.com/othneildrew) / [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
 
