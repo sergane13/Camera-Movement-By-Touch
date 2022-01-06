@@ -156,6 +156,7 @@
 
   * Both scripts are using the **old input system** ⚠️  
   * Using the new input system will results in a lot of errors and incompatibilities, especialy with managing touch on UI elements
+  * Using **Device Simulator** will create unwanted behaviour due to unknown reasons. Test the scripts by building an apk file and intalling it on your device.
 
 <!-- USAGE EXAMPLES -->
 
