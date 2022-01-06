@@ -1,5 +1,6 @@
 <!-- PROJECT LOGO -->
-
+[![HitCount](http://hits.dwyl.com/sergane1313/Camera-Movement-By-Touch.svg?style=flat-square)](http://hits.dwyl.com/sergane1313/Camera-Movement-By-Touch)
+ 
 <br />
 <p align="center">
   <h1 align="center">🎥 Camera Movement By Touch 👆</h1>
